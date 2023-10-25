@@ -7,3 +7,8 @@ class Order(models.Model):
     order_dt = models.DateTimeField(auto_now=True)
     order_name = models.CharField(max_length=120)
     order_tel = models.CharField(max_length=20)
+
+
+class MyClass(models.Model):
+    order_dt = models.DateTimeField(auto_now=True)
+    order_name = models.CharField(max_length=120)

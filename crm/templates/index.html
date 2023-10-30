@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заголовок new</title>
+</head>
+<h1> Заказы </h1>
+
+{% if object_list %}
+<table border="1">
+    <tr>
+        <th> Дата </th>
+        <th> Имя </th>
+        <th> Телефон </th>
+    </tr>
+    {% for obj in object_list %}
+    <tr>
+        <th> {{obj.order_dt}} </th>
+        <th> {{obj.order_name}} </th>
+        <th> {{obj.order_tel}} </th>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+Нет данных
+{% endif %}
+<br>
+<form action="{% url 'pagemsg' %}" method="">
+    <label>Имя</label>
+    <input name="name">
+    <label>Телефон</label>
+    <input name="tel">
+    <button type="submit" name="submit">отправить</button>
+
+</form>
+<body>
+
+</body>
+</html>

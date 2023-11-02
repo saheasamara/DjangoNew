@@ -20,8 +20,9 @@ from django.urls import path
 from crm import views
 
 
-urlpatterns = [
+urlpatterns = ([
     path('admin/', admin.site.urls),
     path('',views.first_page),
     path('addmsg/',views.pagemsg,name='pagemsg')
-]
+])
+ #  + static( settings.MEDIA_URL, document_root = settings.MEDIA_ROOT))

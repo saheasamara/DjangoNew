@@ -1,39 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Заголовок new</title>
-</head>
-<h1> Заказы </h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block index %}
+  <body>
+    <!-- Карусель  -->
+	{% include 'carusel.html' %}
+  	<!-- Карточки -->
+  	{% include 'prices.html' %}
 
-{% if object_list %}
-<table border="1">
-    <tr>
-        <th> Дата </th>
-        <th> Имя </th>
-        <th> Телефон </th>
-    </tr>
-    {% for obj in object_list %}
-    <tr>
-        <th> {{obj.order_dt}} </th>
-        <th> {{obj.order_name}} </th>
-        <th> {{obj.order_tel}} </th>
-    </tr>
-    {% endfor %}
-</table>
-{% else %}
-Нет данных
-{% endif %}
-<br>
-<form action="{% url 'pagemsg' %}" method="">
-    <label>Имя</label>
-    <input name="name">
-    <label>Телефон</label>
-    <input name="tel">
-    <button type="submit" name="submit">отправить</button>
-
-</form>
-<body>
-
-</body>
-</html>
+  	<!-- форма -->
+  	<section>
+  		<div class="container class_form">
+  			<h1 class="text-3">Оставь заявку и получи услугу</h1>
+  			<div class="row justify-content-center">
+  			<form action="" method="" style="width: 50%;">
+			  <div class="form-group row">
+			    <label for="inputEmail3" class="col-sm-2 col-form-label">Имя</label><br>
+			      <input type="text" class="form-control" name="name">
+			    <div class="">
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="inputEmail3" class="col-sm-2 col-form-label">Телефон</label><br>
+			      <input type="text" class="form-control" name="phone">
+			    <div class="">
+			    </div>
+			  </div>
+			  <div style="float: right;" class="form-group row">
+			      <button type="submit" class="btn btn-success">ОСТАВИТЬ ЗАЯВКУ</button>
+			  </div>
+			</form>
+			</div>
+  		</div>
+  	</section>
+ </body>
+{% endblock %}

@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Информация по заказу</title>
-    <h1> {{ name }} Заказ принят {{ tel }} </h1>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+
+{% block addorder %}
+
+	<!-- Спасибо за заказ-->
+  	<section>
+  		<div class="container">
+  			<CENTER style = 'margin-top: 35%; margin-bottom: 35%;'><h1>Спасибо за заявку!</h1></CENTER>
+  		</div>
+  	</section>
+  	<!-- Спасибо -->
+
+{% endblock %}
